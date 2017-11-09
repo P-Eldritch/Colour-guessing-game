@@ -1,0 +1,106 @@
+@import url("reset.css");
+@import url("reset2.css");
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Bold.eot');
+	src: url('fonts/Montserrat-Bold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-Bold.woff2') format('woff2'),
+		url('fonts/Montserrat-Bold.woff') format('woff'),
+		url('fonts/Montserrat-Bold.ttf') format('truetype'),
+		url('fonts/Montserrat-Bold.svg#Montserrat-Bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('fonts/Montserrat-Regular.eot');
+	src: url('fonts/Montserrat-Regular.eot?#iefix') format('embedded-opentype'),
+		url('fonts/Montserrat-Regular.woff2') format('woff2'),
+		url('fonts/Montserrat-Regular.woff') format('woff'),
+		url('fonts/Montserrat-Regular.ttf') format('truetype'),
+		url('fonts/Montserrat-Regular.svg#Montserrat-Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+html {
+	font-size:14px;
+}
+
+body {
+	background-color: #232323;
+	font-family:"Montserrat";
+}
+.square {
+	flex-basis:30%;
+	background-color: purple;
+	padding-bottom: 30%;
+	margin:0.6rem;
+	border-radius:10%;
+	transition: background 0.4s;
+}
+#container{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	max-width:600px;
+	margin:1.5rem auto;
+}
+
+h1{
+	color:white;
+	text-align: center;
+	margin:0;
+	background-color: #74d600;
+	text-transform: uppercase;
+	padding:1.2rem 0;
+	
+}
+#colourDisplay {
+	font-size:3.5rem;
+	line-height: 4.5rem;
+	display:block;
+}
+
+.banner {
+	background-color: white;
+	height:2rem;
+	text-align: center;
+	color:black;
+	font-size: 0;
+}
+.message {
+	display:inline-block;
+	width:20%;
+	font-size: 1rem;
+	font-family: inherit;
+}
+
+.selected{
+	color:white;
+	background-color: #74d600;
+}
+
+.hidden {
+	display:none;
+}
+/*buttons styling*/
+button {
+	font-family: inherit;
+	font-size: 1rem;
+	border:none;
+	background: none;
+	outline:none;
+	text-transform: uppercase;
+	text-align: center;
+	height: 100%;
+	font-weight: 700;
+	color:#74d600;
+	transition:all 0.4s;
+}
+
+button:hover {
+	color:white;
+	background-color: #74d600;
+}
