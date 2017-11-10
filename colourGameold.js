@@ -6,8 +6,8 @@ var easyhardButtons = document.querySelectorAll(".easyhard");
 var squaresCount = 6;
 var colours= generateRandomcolours(squaresCount);
 var squares = document.querySelectorAll(".square");
-var pickedColourDisplay=document.querySelector("#colourDisplay");
-var pickedColour=pickColour();
+var selectedColourDisplay=document.querySelector("#colourDisplay");
+var selectedColour=selectColour();
 var typeMarker = "rgb";
 
 
@@ -53,7 +53,7 @@ function squaresEvents() {
 	for(var i=0; i<squares.length; i++){
 		squares[i].addEventListener ("click", function(){
 		var clickedColour = this.style.backgroundColor;
-		if (pickedColour===clickedColour){
+		if (selectedColour===clickedColour){
 			changeColours(clickedColour);
 			message.textContent = "Correct!";
 			if (typeMarker === "hex") {
@@ -77,16 +77,16 @@ function squaresEvents() {
 
 function restart(){
 	colours = generateRandomcolours(squaresCount);
-	pickedColour =pickColour();
+	selectedColour =selectColour();
 	h1.style.backgroundColor="#74d600";
 	message.textContent = "";
 	hex.textContent = "New hex"
 	newGame.textContent = "New rgb"
 	if (typeMarker === "hex") {
-		colourDisplay.textContent = rgbToHex(pickedColour);
+		colourDisplay.textContent = rgbToHex(selectedColour);
 	}
 	else {
-		colourDisplay.textContent = pickedColour;
+		colourDisplay.textContent = selectedColour;
 	}
 	for (var i=0; i<squares.length;i++) {
 		if (colours[i]) {
@@ -104,7 +104,7 @@ function changeColours(colour) {
 	}
 }
 //generates as many random numbers as there are places in colours array; picks one colour for guessing
-function pickColour(){
+function selectColour(){
 	var random = Math.floor(Math.random()*colours.length);
 	return colours[random];
 }

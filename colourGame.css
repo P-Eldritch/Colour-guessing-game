@@ -33,18 +33,18 @@ body {
 	font-family:"Montserrat";
 }
 .square {
-	flex-basis:30%;
 	background-color: pink;
-	padding-bottom: 30%;
+	height:10rem;
+	width:10rem;
 	margin:0.6rem;
 	border-radius:10%;
 	transition: background 0.4s;
 }
-#container{
+.container{
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:center;
-	max-width:600px;
+	max-width:43rem;
 	margin:1.5rem auto;
 }
 
@@ -103,4 +103,16 @@ button {
 button:hover {
 	color:white;
 	background-color: #74d600;
+}
+
+@media all and (max-width : 480px) {
+	html {
+	font-size:11px;
+	}
+}
+
+@media all and (min-width : 1367px) {
+	html {
+	font-size:20px;
+	}
 }
