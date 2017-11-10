@@ -34,7 +34,7 @@ body {
 }
 .square {
 	flex-basis:30%;
-	background-color: purple;
+	background-color: pink;
 	padding-bottom: 30%;
 	margin:0.6rem;
 	border-radius:10%;

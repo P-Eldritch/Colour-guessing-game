@@ -8,7 +8,7 @@ var colours= generateRandomcolours(squaresCount);
 var squares = document.querySelectorAll(".square");
 var pickedColourDisplay=document.querySelector("#colourDisplay");
 var pickedColour=pickColour();
-var typeMarker;
+var typeMarker = "rgb";
 
 
 buttonsEvents();
@@ -16,13 +16,17 @@ squaresEvents();
 
 //gives new rgb colours
 newGame.addEventListener("click", function(){
-	restart();
 	typeMarker = "rgb";
+	this.classList.add("selected");
+	hex.classList.remove("selected");
+	restart();
 });
 //gives new hex colours
 hex.addEventListener("click", function(){
 	typeMarker = "hex";
-	restart(typeMarker);
+	this.classList.add("selected");
+	newGame.classList.remove("selected");
+	restart();
 	
 });
 
@@ -71,14 +75,14 @@ function squaresEvents() {
 	restart();
 }
 
-function restart(type){
+function restart(){
 	colours = generateRandomcolours(squaresCount);
 	pickedColour =pickColour();
 	h1.style.backgroundColor="#74d600";
 	message.textContent = "";
 	hex.textContent = "New hex"
 	newGame.textContent = "New rgb"
-	if (type === "hex") {
+	if (typeMarker === "hex") {
 		colourDisplay.textContent = rgbToHex(pickedColour);
 	}
 	else {
