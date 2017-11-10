@@ -14,15 +14,16 @@ var typeMarker;
 buttonsEvents();
 squaresEvents();
 
-//gives new colours
+//gives new rgb colours
 newGame.addEventListener("click", function(){
 	restart();
 	typeMarker = "rgb";
 });
-//alert about hex
+//gives new hex colours
 hex.addEventListener("click", function(){
-	restart("hex");
 	typeMarker = "hex";
+	restart(typeMarker);
+	
 });
 
 
