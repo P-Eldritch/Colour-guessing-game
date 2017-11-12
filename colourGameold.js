@@ -35,8 +35,7 @@ function buttonsEvents() {
 //controls selected button; calls restart to generate colours accordingly (3 or 6)
 	for (var i=0; i<easyhardButtons.length; i++) {
 	easyhardButtons[i].addEventListener("click", function(){
-		easyhardButtons[0].classList.remove("selected");
-		easyhardButtons[1].classList.remove("selected");
+		unselectButtons(easyhardButtons);
 		this.classList.add("selected");
 		if (this.textContent==="Easy"){
 			squaresCount = 3;
@@ -46,6 +45,13 @@ function buttonsEvents() {
 		}
 	restart();
 	});
+	}
+}
+
+//removes selected class for all buttons
+function unselectButtons(buttons) {
+	for (var i = 0; i<buttons.length; i++) {
+		buttons[i].classList.remove("selected");
 	}
 }
 //grab colour of the clicked square, compare the colour to a picked colour
@@ -93,11 +99,14 @@ function restart(){
 			squares[i].classList.remove("hidden");
 			squares[i].style.backgroundColor =colours[i];
 		}
+		//if all generated colours have been paired with squares, all left unpaired squares are hidden
 		else {
 			squares[i].classList.add("hidden");
 		}
 	}
 }
+
+//changes colours to all squares when the guess is correct
 function changeColours(colour) {
 	for (var i=0; i<squares.length; i++) {
 		squares[i].style.backgroundColor = colour;
@@ -124,6 +133,7 @@ function generateRandomcolours(num) {
 	};
 	return arr;
 }
+
 function rgbToHex(num) {
 	var hexNumArray = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
 	var splitArr = num.replace('rgb(','').replace(')','').split(", ");
